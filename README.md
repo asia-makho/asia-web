@@ -28,7 +28,6 @@ The project consists of three main sections:
 2. **Weather & Time:** A functional dashboard featuring the live widgets.
 3. **Contacts:** Quick and easy links to get in touch with me, featuring animated social media icons.
 
-## 💻 Getting Started (Local Setup)
 ---
 
 Developed with ❤️ by **Asia Makhomet**
