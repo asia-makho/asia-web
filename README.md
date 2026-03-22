@@ -32,4 +32,5 @@ The project consists of three main sections:
 ---
 
 Developed with ❤️ by **Asia Makhomet**
+
 Student at **FBME, Igor Sikorsky Kyiv Polytechnic Institute (2026).**
