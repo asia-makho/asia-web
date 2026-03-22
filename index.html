@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Головна сторінка портфоліо студента.">
+    <title>Анастасія | Портфоліо студентки 👩‍💻</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>👩‍💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="images/me.jpg" alt="Me" class="Me-logo" width="440" height="440">
+
+            <div class="header-text">
+                <span class="portfolio-label">Портфоліо</span>
+                <h1 class="my-name">Анастасія</h1>
+                <a href="#projects" class="my-projects-btn">Мої проєкти</a>
+            </div>
+
+            <div class="site-controls">
+                <div class="lang-switch">
+                    <a href="#" class="active">UA</a>
+                    <a href="index-en.html">EN</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <nav class="main-nav" aria-label="Головна навігація">
+                <ul class="menu-buttons">
+                    <li><a href="index.html" aria-current="page">Головна</a></li>
+                    <li><a href="my-contacts.html">Контакти</a></li>
+                    <li><a href="weather-time-dashboard.html">Погода та час</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Про мене</h2>
+                <div class="card">
+                    <div class="about-me-content">
+                        <img src="images/Vorokhta.jpg" alt="Vorokhta" class="Vorokhta-logo">
+                        <div class="about-me-text">
+                            <p>Привіт! Мене звати <strong>Анастасія</strong>. Я — студентка 2 курсу ФБМІ КПІ.</p>
+                            <p>Захоплююся програмуванням, особливо веб‑розробкою.</p>
+                            <p>У вільний час дивлюся детективні фільми та серіали. Також люблю подорожувати по
+                                Україні,
+                                найбільше сподобалось у Ворохті.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Навички</h2>
+                <div class="grid-two">
+                    <article class="card">
+                        <h3>Стек технологій</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>Git/GitHub</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Soft skills</h3>
+                        <ul>
+                            <li>Креативність</li>
+                            <li>Вміння працювати в команді</li>
+                            <li>Пунктуальність</li>
+                            <li>Готовність до навчання</li>
+                            <li>Відповідальність</li>
+                            <li>Тайм-менеджмент</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Освіта</h2>
+                <div class="grid-three">
+                    <article class="card">
+                        <div class="edu-block">
+                            <h3>Національний технічний університет України «КПІ ім. Ігоря Сікорського», ФБМІ</h3>
+                            <p><strong>Спеціальність:</strong> Комп'ютерні науки</p>
+                            <p><strong>Період:</strong> 2024 - 2028</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="edu-block">
+                            <h3>ВСП Оптико-механічний фаховий коледж КНУ імені Тараса
+                                Шевченка.</h3>
+                            <p><strong>Спеціальність:</strong> Інженерія Програмного забезпечення (молодший спеціаліст)
+                            </p>
+                            <p><strong>Період:</strong> 2019 - 2023</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Додаткові курси</h3>
+                        <ol>
+                            <li><strong>Веб-розробка:</strong> майстер-класи від GeniusSpace (2023)</li>
+                            <li><strong>Веб-розробка:</strong> міні-курс від Hillel (2023)</li>
+                            <li><strong>Веб-розробка:</strong> майстер-класи від GoIT (2023)</li>
+                        </ol>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Мої проєкти</h2>
+                <div class="grid-three" id="projects-container">
+                    <article class="card">
+                        <img src="images/matplotlib_heart.jpg" alt="Математичне серце turtle" class="project-img">
+                        <div class="project-info">
+                            <h3>Візуалізація даних: Графік Серця</h3>
+                            <p><strong>Технології:</strong> Python, turtle</p>
+                            <p>Опанувавши побудову графіків для студради, я вирішила створити власний творчий
+                                міні-проєкт.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/horoskope_tgbot.png" alt="Telegram Bot" class="project-img">
+                        <div class="project-info">
+                            <h3>Розробка консольного чат-бота для генерації гороскопів</h3>
+                            <p><strong>Технології:</strong> Telegram Bot API, Botfather</p>
+                            <p>Програма генерує три частини гороскопу на основі введених дат народження, з метою
+                                повторюваності результатів.</p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/weather_time_dashboard.png" alt="Погода та час" class="project-img">
+                        <div class="project-info">
+                            <h3>Дашборд Погоди та Часу</h3>
+                            <p><strong>Технології:</strong> HTML, CSS, JavaScript, API</p>
+                            <p>Інтерактивний дашборд, який показує поточну погоду та час у будь-якому місті світу.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Волонтерський досвід</h2>
+                <article class="card">
+                    <h3>Технічний відділ студентської ради ФБМІ</h3>
+                    <p><strong>Період:</strong> 2024 - дотепер</p>
+                    <ul>
+                        <li>Обробка результатів опитувань щодо викладачів та побудова статистичних графіків за допомогою
+                            <strong>Python (matplotlib)</strong>.
+                        </li>
+                        <li>Робота в команді над спільними завданнями.</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span>&copy; 2026 Анастасія. Усі права захищені.</span>
+                    <p><a href="#top">Повернутися догори</a></p>
+                </div>
+                <div class="footer-right">
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:asiamakhomet@gmail.com">asiamakhomet@gmail.com</a>
+                        </li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/asia-makho/">github.com/asia-makho</a>
+                        </li>
+                        <li><a href="my-contacts.html">Усі контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/script.js" defer></script>
+</body>
+
+</html>

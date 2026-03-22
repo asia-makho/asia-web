@@ -1,0 +1,757 @@
+/* --- Основні налаштування --- */
+body {
+    font-family: "Lora", serif;
+    color: #333;
+    margin: 0;
+    padding: 20px 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #dbeafe, #e0f2fe);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 40px;
+    position: relative;
+}
+
+/* --- Шапка --- */
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0 40px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+
+.portfolio-label {
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.Me-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+
+h1.my-name {
+    font-size: 2.8em;
+    color: #000;
+    margin: 5px 0 15px;
+    font-weight: bold;
+}
+
+.my-projects-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background 0.2s;
+}
+
+.my-projects-btn:hover {
+    background-color: #e2e8f0;
+}
+
+/* --- КНОПКИ МОВИ ТА ТЕМНОЇ ТЕМИ --- */
+nav.main-nav {
+    top: 85px !important;
+}
+
+.site-controls {
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 100;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-switch a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    text-decoration: none !important;
+    color: #111827 !important;
+    background: #fff;
+    border: 2px solid #111827;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+.lang-switch a.active {
+    background: #111827 !important;
+    color: #fff !important;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.6em;
+    cursor: pointer;
+    color: #111827;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    color: #007bff;
+}
+
+body.dark-theme .lang-switch a {
+    background: #1e1e1e;
+    color: #f1f1f1 !important;
+    border-color: #f1f1f1;
+}
+
+body.dark-theme .lang-switch a.active {
+    background: #f1f1f1 !important;
+    color: #111827 !important;
+}
+
+body.dark-theme .theme-toggle {
+    color: #f1f1f1;
+}
+
+/* --- Навігація --- */
+nav.main-nav {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.menu-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-buttons a {
+    text-decoration: none;
+    color: #333;
+    background-color: transparent;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: normal;
+    transition: all 0.2s;
+    display: block;
+    text-align: center;
+}
+
+.menu-buttons a:hover,
+.menu-buttons a[aria-current="page"] {
+    background-color: #e2e8f0;
+    color: #000;
+}
+
+/* --- Заголовки та "Про мене" --- */
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #000;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.about-me-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.about-me-text {
+    flex: 1;
+}
+
+.about-me-text p {
+    line-height: 1.6;
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    color: #374151;
+}
+
+.Vorokhta-logo {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* --- Сітки та Картки --- */
+.grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    margin: 0 0 15px;
+    font-size: 1.25em;
+    color: #111827;
+    font-weight: bold;
+}
+
+.card h4 {
+    margin: 0 0 8px;
+    font-size: 1.05em;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.card ul,
+.card ol {
+    margin: 0;
+    padding-left: 20px;
+    color: #374151;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.card ul li,
+.card ol li {
+    margin-bottom: 8px;
+}
+
+/* --- Картки проєктів --- */
+.project-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+#projects .card {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+#projects .project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+#projects .project-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.25em;
+    color: #111827;
+    font-weight: bold;
+    text-align: left;
+}
+
+.project-info p {
+    margin: 4px 0;
+    font-size: 0.95em;
+    color: #374151;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* --- Контакти --- */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 0 !important;
+}
+
+.contact-item strong {
+    margin-right: 8px;
+}
+
+.contact-icon {
+    width: 30px;
+    font-size: 1.3em;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.contact-item a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* --- ДАШБОРД: ПОГОДА ТА ЧАС --- */
+.dashboard-wrapper {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+/* Годинник */
+.clock-container {
+    flex: 0 0 auto;
+}
+
+.clock {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #2c3e50;
+    border-radius: 50%;
+    position: relative;
+    background: white;
+}
+
+.num {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.num span {
+    display: inline-block;
+    padding-top: 8px;
+}
+
+.num1 {
+    transform: rotate(30deg);
+}
+
+.num2 {
+    transform: rotate(60deg);
+}
+
+.num3 {
+    transform: rotate(90deg);
+}
+
+.num4 {
+    transform: rotate(120deg);
+}
+
+.num5 {
+    transform: rotate(150deg);
+}
+
+.num6 {
+    transform: rotate(180deg);
+}
+
+.num7 {
+    transform: rotate(210deg);
+}
+
+.num8 {
+    transform: rotate(240deg);
+}
+
+.num9 {
+    transform: rotate(270deg);
+}
+
+.num10 {
+    transform: rotate(300deg);
+}
+
+.num11 {
+    transform: rotate(330deg);
+}
+
+.num12 {
+    transform: rotate(0deg);
+}
+
+.num1 span {
+    transform: rotate(-30deg);
+}
+
+.num2 span {
+    transform: rotate(-60deg);
+}
+
+.num3 span {
+    transform: rotate(-90deg);
+}
+
+.num4 span {
+    transform: rotate(-120deg);
+}
+
+.num5 span {
+    transform: rotate(-150deg);
+}
+
+.num6 span {
+    transform: rotate(-180deg);
+}
+
+.num7 span {
+    transform: rotate(-210deg);
+}
+
+.num8 span {
+    transform: rotate(-240deg);
+}
+
+.num9 span {
+    transform: rotate(-270deg);
+}
+
+.num10 span {
+    transform: rotate(-300deg);
+}
+
+.num11 span {
+    transform: rotate(-330deg);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 45px;
+    background: #2c3e50;
+}
+
+.min-hand {
+    width: 4px;
+    height: 60px;
+    background: #7f8c8d;
+}
+
+.second-hand {
+    width: 2px;
+    height: 70px;
+    background: #e74c3c;
+}
+
+.center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #2c3e50;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+/* Погода і Пошук */
+.weather-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-box button:hover {
+    background-color: #1a252f;
+}
+
+.weather-info-display {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.weather-info-display .icon {
+    font-size: 65px;
+}
+
+.weather-info-display .info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.weather-info-display .info h3,
+.weather-info-display .info p {
+    margin: 0;
+    text-align: left;
+}
+
+.weather-info-display .info h3 {
+    font-size: 1.6em;
+    color: #1e293b;
+}
+
+.weather-info-display .info #temperature {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.weather-info-display .info p {
+    color: #64748b;
+    font-size: 0.95em;
+}
+
+/* --- Футер --- */
+footer {
+    width: 100%;
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid #e2e8f0;
+    clear: both;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
+}
+
+.footer-left a,
+.footer-right a {
+    color: #007bff;
+    text-decoration: underline;
+    font-weight: normal;
+    transition: opacity 0.2s;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+    opacity: 0.8;
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 900px) {
+    .grid-three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-horizontal {
+        flex-direction: column;
+    }
+
+    .project-img {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-wrapper {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .weather-info-display {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .weather-info-display .info h3,
+    .weather-info-display .info p {
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-three {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- DARK MODE --- */
+body.dark-theme {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme .portfolio-label,
+body.dark-theme .footer-content {
+    color: #f1f1f1;
+}
+
+body.dark-theme .card p,
+body.dark-theme .card ul,
+body.dark-theme .card ol,
+body.dark-theme .card li,
+body.dark-theme .card strong,
+body.dark-theme .project-info p,
+body.dark-theme .project-info strong,
+body.dark-theme .edu-block p,
+body.dark-theme .my-projects-btn {
+    color: #f1f1f1 !important;
+    border-color: #555;
+}
+
+body.dark-theme .card,
+body.dark-theme .dashboard-wrapper,
+body.dark-theme .weather-info-display,
+body.dark-theme nav.main-nav,
+body.dark-theme .my-projects-btn {
+    background-color: #1e1e1e;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.02);
+}
+
+body.dark-theme .menu-buttons a {
+    color: #f1f1f1;
+}
+
+body.dark-theme .menu-buttons a:hover,
+body.dark-theme .menu-buttons a[aria-current="page"],
+body.dark-theme .my-projects-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
