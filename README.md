@@ -3,8 +3,7 @@
 Hi there! 👋 This is my interactive portfolio designed to showcase modern web development skills. What started as a simple static page has evolved into a fully dynamic, responsive web application featuring real-time data fetching and state management.
 
 ## 🔗 Live Demo
-**[Insert link to your GitHub Pages here]** *(e.g., https://yourusername.github.io/your-repo/)*
-
+**https://asia-makho.github.io/asia-portfolio-web/** 
 ## 🚀 Key Features
 
 * **⛅ Dynamic Weather Dashboard:** Integrated with the OpenWeatherMap API using asynchronous JavaScript (`Fetch API`, `async/await`) to display real-time temperature, humidity, and wind speed for any city.
