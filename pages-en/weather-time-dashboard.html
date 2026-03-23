@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Погода та час | Анастасія</title>
+    <title>Weather and Time | Anastasia</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌡️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
     <div class="container">
         <header>
-            <img src="images/me.jpg" alt="Me" class="Me-logo" width="160" height="160">
+            <img src="../images/me.jpg" alt="Me" class="Me-logo" width="160" height="160">
             <div class="header-text">
-                <span class="portfolio-label">Погода та час | Дашборд</span>
-                <h1 class="my-name">Анастасія</h1>
-                <a href="index.html" class="my-projects-btn">На головну</a>
+                <span class="portfolio-label">Weather and Time | Dashboard</span>
+                <h1 class="my-name">Anastasiia</h1>
+                <a href="index.html" class="my-projects-btn">Back to Main</a>
             </div>
 
             <div class="site-controls">
                 <div class="lang-switch">
-                    <a href="#" class="active">UA</a>
-                    <a href="pages-en/weather-time-dashboard.html">EN</a>
+                    <a href="../weather-time-dashboard.html">UA</a>
+                    <a href="#" class="active">EN</a>
                 </div>
                 <button id="theme-toggle" class="theme-toggle">
                     <i class="fa-solid fa-moon"></i>
@@ -36,16 +36,16 @@
 
             <nav class="main-nav">
                 <ul class="menu-buttons">
-                    <li><a href="index.html">Головна</a></li>
-                    <li><a href="my-contacts.html">Контакти</a></li>
-                    <li><a href="weather-time-dashboard.html" aria-current="page">Погода та час</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="my-contacts.html">Contacts</a></li>
+                    <li><a href="weather-time-dashboard.html" aria-current="page">Weather and Time</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section>
-                <h2>Поточна погода та час у вашому місті</h2>
+                <h2>Current Weather and Time in Your City</h2>
                 <div class="dashboard-wrapper">
 
                     <div class="clock-container">
@@ -72,22 +72,22 @@
 
                     <div class="weather-section">
                         <div class="search-box">
-                            <input type="text" id="city" placeholder="Введіть місто..." onkeypress="handleEnter(event)">
-                            <button onclick="getWeather()">Пошук</button>
+                            <input type="text" id="city" placeholder="Enter city..." onkeypress="handleEnter(event)">
+                            <button onclick="getWeather()">Search</button>
                         </div>
 
                         <div id="error-message" class="error-message"></div>
-                        <div id="loading" style="display: none; color: #555; margin-bottom: 10px;">Завантаження...</div>
+                        <div id="loading" style="display: none; color: #555; margin-bottom: 10px;">Loading...</div>
 
                         <div class="weather-info-display">
                             <div class="icon" id="current-icon">☁️</div>
                             <div class="info">
-                                <h3 id="cityName">Місто</h3>
+                                <h3 id="cityName">City</h3>
                                 <p id="temperature">--°C</p>
                                 <p id="description">--</p>
-                                <p id="feels-like">Відчувається як: --°C</p>
-                                <p id="humidity">Вологість: --%</p>
-                                <p id="wind-speed">Вітер: -- м/с</p>
+                                <p id="feels-like">Feels like: --°C</p>
+                                <p id="humidity">Humidity: --%</p>
+                                <p id="wind-speed">Wind: -- m/s</p>
                             </div>
                         </div>
                     </div>

@@ -22,6 +22,18 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock(); // викликаємо одразу, щоб стрілки стали на місце без затримки в 1 секунду
 
+// Запуск годинника (тільки якщо годинник Є на сторінці)
+if (document.getElementById('second-hand')) {
+    setInterval(updateClock, 1000);
+    updateClock();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Запускаємо погоду, тільки якщо є поле для вводу міста
+    if (document.getElementById('city')) {
+        getWeather('Kyiv');
+    }
+});
 
 // ==========================================
 // 2. ВІДЖЕТ ПОГОДИ
@@ -35,7 +47,6 @@ function handleEnter(event) {
 }
 
 async function getWeather(city = null) {
-    // Беремо місто з поля вводу, або те, що передали у функцію
     const searchCity = city || document.getElementById('city').value;
     const errorMessage = document.getElementById('error-message');
     const loading = document.getElementById('loading');

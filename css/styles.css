@@ -714,6 +714,18 @@ body.dark-theme {
     color: #f1f1f1;
 }
 
+body.dark-theme .clock {
+    background-color: #1a252f;
+    /* Дуже темний фон годинника */
+    border-color: #f1f1f1;
+    /* Світла рамка */
+}
+
+body.dark-theme .num {
+    color: #f1f1f1;
+    /* Світлі цифри */
+}
+
 body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,
@@ -738,7 +750,6 @@ body.dark-theme .my-projects-btn {
 
 body.dark-theme .card,
 body.dark-theme .dashboard-wrapper,
-body.dark-theme .weather-info-display,
 body.dark-theme nav.main-nav,
 body.dark-theme .my-projects-btn {
     background-color: #1e1e1e;
@@ -754,4 +765,22 @@ body.dark-theme .menu-buttons a[aria-current="page"],
 body.dark-theme .my-projects-btn:hover {
     background-color: #333;
     color: #fff;
+}
+
+body.dark-theme .weather-info-display {
+    background-color: #2c3e50;
+    border-color: #444;
+}
+
+body.dark-theme .weather-info-display .info h3 {
+    color: #f1f1f1;
+}
+
+body.dark-theme .weather-info-display .info p,
+body.dark-theme .weather-info-display .info strong {
+    color: #cbd5e1;
+}
+
+body.dark-theme .weather-info-display .info #temperature {
+    color: #60a5fa;
 }
