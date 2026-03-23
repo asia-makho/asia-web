@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ======================================================== */
 
     // 1. Рендер Проєктів
-    const projectsContainer = document.getElementById('projects-container');
+    const projContainer = document.getElementById('projects-container');
     if (projectsContainer) {
         projectsContainer.innerHTML = ''; // Очищаємо перед рендером
         projectsData.forEach(project => {
