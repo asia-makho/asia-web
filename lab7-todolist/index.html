@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab 7 | Reactive Todo List</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="/lab7-todolist/assets/vendor/rxjs.umd.js"></script>
-  <script type="module" src="assets/js/main.js"></script>
+  <title>Reactive Todo List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Reactive Todo List</h1>
-      <div class="hero__actions">
-        <a class="btn btn--ghost" href="/lab 1-4/index.html">На головну</a>
+  <div class="container">
+    <h1>Reactive Todo List</h1>
+    <a href="../index.html" class="btn-back">На головну</a>
+
+    <div class="todo-app">
+      <div class="input-section">
+        <h2>Нова задача</h2>
+        <div class="input-group">
+          <input type="text" id="todoInput" placeholder="Наприклад: Виконати лабораторну">
+          <button id="addBtn" type="button">Додати</button>
+        </div>
+
+        <div class="filters">
+          <button id="filterAll" class="active">Усі</button>
+          <button id="filterActive">Активні</button>
+          <button id="filterCompleted">Виконані</button>
+        </div>
+
+        <div class="stats">
+          Всього: <span id="totalCount">0</span> |
+          Активні: <span id="activeCount">0</span> |
+          Виконані: <span id="completedCount">0</span>
+        </div>
+      </div>
+
+      <div class="list-section">
+        <h2>Список задач</h2>
+        <ul id="todoList"></ul>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="section">
-      <div class="container layout">
-
-        <article class="panel panel--controls">
-          <form id="todoForm" class="form" novalidate>
-            <label class="field" for="todoInput">Нова задача</label>
-            <div class="row">
-              <input id="todoInput" name="todoInput" type="text" maxlength="120"
-                placeholder="Наприклад: Виконати лабораторну роботу" autocomplete="off">
-              <button class="btn" type="submit">Додати</button>
-            </div>
-          </form>
-
-          <div class="filter-group" id="filterButtons" aria-label="Фільтри задач">
-            <button class="btn btn--ghost is-active" type="button" data-filter="all">Усі</button>
-            <button class="btn btn--ghost" type="button" data-filter="active">Активні</button>
-            <button class="btn btn--ghost" type="button" data-filter="completed">Виконані</button>
-          </div>
-
-          <div class="meta" id="metaInfo">Всього: 0 | Активні: 0 | Виконані: 0</div>
-        </article>
-
-        <article class="panel">
-          <h2>Список задач</h2>
-          <ul id="todoList" class="todo-list" aria-live="polite"></ul>
-        </article>
-
-      </div>
-    </section>
-  </main>
+  <script src="dist/index.js" type="module"></script>
 </body>
 
 </html>
