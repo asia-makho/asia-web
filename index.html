@@ -13,6 +13,7 @@
             --surface: #ffffff;
             --text: #1a1a1a;
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --btn-hover: #333333;
         }
 
         body {
@@ -38,13 +39,12 @@
             gap: 20px;
         }
 
-        /* Стиль карток проєктів */
+        /* Тепер це звичайний блок div, а не посилання */
         .project-card {
             display: block;
             background-color: var(--surface);
             padding: 30px;
             border-radius: 18px;
-            text-decoration: none;
             color: var(--text);
             box-shadow: var(--shadow);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -63,10 +63,46 @@
         }
 
         .project-desc {
-            margin: 0;
+            margin: 0 0 20px 0;
+            /* Додав відступ знизу для кнопок */
             color: #666666;
             font-size: 16px;
             line-height: 1.5;
+        }
+
+        /* --- НОВІ СТИЛІ ДЛЯ КНОПОК --- */
+        .links {
+            display: flex;
+            gap: 15px;
+            /* Відстань між кнопками */
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--text);
+            color: var(--surface);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--btn-hover);
+        }
+
+        /* Робимо кнопку репозиторію трохи іншою для краси */
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text);
+            border: 1px solid #d1d9e6;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(0, 0, 0, 0.03);
         }
     </style>
 </head>
@@ -76,39 +112,40 @@
     <h1>Мої проєкти</h1>
 
     <div class="projects-grid">
-        <a href="lab 1-4/index.html" class="project-card">
+
+        <div class="project-card">
             <h2 class="project-title">Портфоліо: Лабораторні роботи 1-4</h2>
             <p class="project-desc">Тема: Основи HTML та CSS, адаптивна верстка та дизайн статичних сторінок.</p>
             <div class="links">
-                <a class="btn" href="https://github.com/asia-makho/asia-web/tree/main/lab%201-4" target="_blank"
-                    rel="noopener noreferrer">Посилання на репозиторій</a>
                 <a class="btn" href="lab 1-4/index.html">Сайт</a>
+                <a class="btn btn-outline" href="https://github.com/asia-makho/asia-web/tree/main/lab%201-4"
+                    target="_blank" rel="noopener noreferrer">Код на GitHub</a>
             </div>
-        </a>
+        </div>
 
-        <a href="lab5-6 (bookfinder)/index.html" class="project-card">
+        <div class="project-card">
             <h2 class="project-title">Book Finder (Лабораторні 5-6)</h2>
             <p class="project-desc">Інтерактивний додаток для пошуку книг. Робота з JavaScript, DOM та зовнішніми API.
             </p>
             <div class="links">
-                <a class="btn" href="https://github.com/asia-makho/asia-web/tree/main/lab5-6%20(bookfinder)"
-                    target="_blank" rel="noopener noreferrer">Посилання на репозиторій</a>
                 <a class="btn" href="lab5-6 (bookfinder)/index.html">Сайт</a>
+                <a class="btn btn-outline" href="https://github.com/asia-makho/asia-web/tree/main/lab5-6%20(bookfinder)"
+                    target="_blank" rel="noopener noreferrer">Код на GitHub</a>
             </div>
-        </a>
+        </div>
 
-        <a href="lab7-todolist/index.html" class="project-card">
+        <div class="project-card">
             <h2 class="project-title">Todo List (Лабораторна 7)</h2>
             <p class="project-desc">Сучасний список завдань, написаний на TypeScript із використанням реактивної
                 бібліотеки RxJS.</p>
             <div class="links">
-                <a class="btn" href="https://github.com/asia-makho/asia-web/tree/main/lab7-todolist" target="_blank"
-                    rel="noopener noreferrer">Посилання на репозиторій</a>
                 <a class="btn" href="lab7-todolist/index.html">Сайт</a>
+                <a class="btn btn-outline" href="https://github.com/asia-makho/asia-web/tree/main/lab7-todolist"
+                    target="_blank" rel="noopener noreferrer">Код на GitHub</a>
             </div>
-        </a>
+        </div>
+
     </div>
 
 </body>
-
 </html>
