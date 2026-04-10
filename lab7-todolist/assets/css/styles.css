@@ -1,0 +1,278 @@
+/* --- 1. КОРЕНЕВІ ЗМІННІ (КОЛЬОРИ ПОРТФОЛІО) --- */
+:root {
+    --bg: rgb(147, 209, 248);
+    --surface: #ffffff;
+    /* Білий фон карток */
+    --surface-2: #ffffff;
+    /* Ледь блакитний для самих задач */
+    --text: #1a1a1a;
+    /* Темний колір тексту */
+    --muted: #666666;
+    /* Сірий для другорядного тексту */
+    --accent: #1a1a1a;
+    /* Чорні/темні кнопки як у портфоліо */
+    --accent-dark: #000000;
+    /* Колір кнопок при наведенні */
+    --line: #ffffff;
+    /* Колір ліній та рамок */
+    --danger: #dc3545;
+    /* Червоний для кнопок видалення */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* М'яка тінь для карток */
+}
+
+/* --- 2. БАЗОВІ СТИЛІ ТА ШРИФТИ --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    /* Зручний шрифт для читання задач */
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+/* Шрифт із зарубками для заголовків (як у портфоліо) */
+h1,
+h2,
+.hero__label {
+    font-family: "Lora", Georgia, serif;
+    color: var(--text);
+}
+
+.container {
+    width: min(1080px, 100%);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 3. ШАПКА (HERO) --- */
+.hero {
+    padding: 52px 0 24px;
+}
+
+.hero__label {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.hero__actions {
+    margin-top: 20px;
+}
+
+/* --- 4. КАРТКИ ТА ЛЕЙАУТ --- */
+.section {
+    padding: 12px 0 52px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.panel {
+    background: var(--surface);
+    border: none;
+    /* Прибрали грубу рамку, залишили тінь */
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.panel h2 {
+    margin: 0 0 16px;
+    font-size: 28px;
+}
+
+/* --- 5. ФОРМА ТА ПОЛЯ ВВОДУ --- */
+.form {
+    margin-bottom: 14px;
+}
+
+.field {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+input {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px 12px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+input:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* --- 6. КНОПКИ ТА ФІЛЬТРИ --- */
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.btn {
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.btn--ghost {
+    background: #f8f9fa;
+    color: var(--accent);
+    border-color: var(--line);
+}
+
+.btn--ghost:hover {
+    background: rgba(211, 166, 166, 0.05);
+    border-color: var(--accent);
+}
+
+.is-active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.btn--danger {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.btn--danger:hover {
+    background: var(--danger);
+    color: #fff;
+}
+
+/* --- 7. СПИСОК ЗАДАЧ --- */
+.meta {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.todo-item {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface-2);
+    padding: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.todo-item__text {
+    margin: 0;
+    word-break: break-word;
+}
+
+.todo-item__checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.todo-item--done .todo-item__text {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.todo-empty {
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 14px;
+    color: var(--muted);
+    background: var(--surface);
+    text-align: center;
+}
+
+/* --- 8. АДАПТИВНІСТЬ (МОБІЛЬНА ВЕРСІЯ) --- */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero {
+        padding-top: 40px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .todo-item {
+        grid-template-columns: auto 1fr;
+    }
+
+    .todo-item .btn {
+        grid-column: 1 / -1;
+    }
+}
