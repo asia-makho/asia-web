@@ -1,278 +1,163 @@
-/* --- 1. КОРЕНЕВІ ЗМІННІ (КОЛЬОРИ ПОРТФОЛІО) --- */
+/* Основні кольори та шрифти */
 :root {
-    --bg: rgb(147, 209, 248);
-    --surface: #ffffff;
-    /* Білий фон карток */
-    --surface-2: #ffffff;
-    /* Ледь блакитний для самих задач */
-    --text: #1a1a1a;
-    /* Темний колір тексту */
-    --muted: #666666;
-    /* Сірий для другорядного тексту */
-    --accent: #1a1a1a;
-    /* Чорні/темні кнопки як у портфоліо */
-    --accent-dark: #000000;
-    /* Колір кнопок при наведенні */
-    --line: #ffffff;
-    /* Колір ліній та рамок */
-    --danger: #dc3545;
-    /* Червоний для кнопок видалення */
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    /* М'яка тінь для карток */
-}
-
-/* --- 2. БАЗОВІ СТИЛІ ТА ШРИФТИ --- */
-* {
-    box-sizing: border-box;
+    --bg-color: #eaf1fb;
+    --card-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #1a1a1a; /* Чорний для кнопок */
+    --border-color: #d1d9e6;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    /* Зручний шрифт для читання задач */
-    color: var(--text);
-    background: var(--bg);
-    min-height: 100vh;
-}
-
-/* Шрифт із зарубками для заголовків (як у портфоліо) */
-h1,
-h2,
-.hero__label {
-    font-family: "Lora", Georgia, serif;
-    color: var(--text);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
-    width: min(1080px, 100%);
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 900px;
+    width: 100%;
 }
 
-/* --- 3. ШАПКА (HERO) --- */
-.hero {
-    padding: 52px 0 24px;
+h1, h2 {
+    font-family: 'Lora', Georgia, serif;
+    margin-top: 0;
 }
 
-.hero__label {
-    margin: 0 0 8px;
-    color: var(--muted);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 13px;
+h1 { font-size: 36px; margin-bottom: 10px; }
+
+/* Кнопка "На головну" */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
 }
 
-.hero h1 {
-    margin: 0 0 12px;
-    font-size: 42px;
-    line-height: 1.1;
+.btn-back:hover {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
 }
 
-.hero__actions {
-    margin-top: 20px;
-}
-
-/* --- 4. КАРТКИ ТА ЛЕЙАУТ --- */
-.section {
-    padding: 12px 0 52px;
-}
-
-.layout {
+/* Макет додатку */
+.todo-app {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 22px;
-    align-items: start;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
 }
 
-.panel {
-    background: var(--surface);
-    border: none;
-    /* Прибрали грубу рамку, залишили тінь */
-    border-radius: 18px;
-    padding: 22px;
+/* Секції (білі картки) */
+.input-section, .list-section {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
     box-shadow: var(--shadow);
 }
 
-.panel h2 {
-    margin: 0 0 16px;
-    font-size: 28px;
+/* Поле вводу та кнопки */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-/* --- 5. ФОРМА ТА ПОЛЯ ВВОДУ --- */
-.form {
-    margin-bottom: 14px;
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-.field {
-    display: block;
-    margin-bottom: 8px;
+input[type="text"]:focus {
+    border-color: var(--accent-color);
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+#addBtn {
+    padding: 12px 20px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
     font-weight: 600;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 10px;
+#addBtn:hover {
+    background: #333;
+    transform: translateY(-2px);
 }
 
-input,
-button {
-    font: inherit;
-}
-
-input {
-    width: 100%;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 11px 12px;
-    background: var(--surface);
-    color: var(--text);
-}
-
-input:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-}
-
-/* --- 6. КНОПКИ ТА ФІЛЬТРИ --- */
-.filter-group {
+/* Фільтри */
+.filters {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 14px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.btn {
-    border: 1px solid var(--accent);
-    background: var(--accent);
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px 14px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s ease;
+.filters button {
+    padding: 8px 15px;
+    background: #f0f4f9;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #555;
 }
 
-.btn:hover {
-    background: var(--accent-dark);
-    border-color: var(--accent-dark);
+.filters button.active {
+    background: var(--accent-color);
+    color: white;
 }
 
-.btn--ghost {
-    background: #f8f9fa;
-    color: var(--accent);
-    border-color: var(--line);
+/* Статистика */
+.stats {
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
 }
 
-.btn--ghost:hover {
-    background: rgba(211, 166, 166, 0.05);
-    border-color: var(--accent);
-}
-
-.is-active {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-}
-
-.btn--danger {
-    border-color: var(--danger);
-    color: var(--danger);
-}
-
-.btn--danger:hover {
-    background: var(--danger);
-    color: #fff;
-}
-
-/* --- 7. СПИСОК ЗАДАЧ --- */
-.meta {
-    margin-top: 14px;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.todo-list {
+/* Список задач */
+ul {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: grid;
-    gap: 10px;
-}
-
-.todo-item {
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--surface-2);
-    padding: 12px;
-    display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    gap: 10px;
-    align-items: center;
-}
-
-.todo-item__text {
     margin: 0;
-    word-break: break-word;
 }
 
-.todo-item__checkbox {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--accent);
-    cursor: pointer;
+li {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f9f9f9;
+    gap: 10px;
 }
 
-.todo-item--done .todo-item__text {
+li:last-child { border-bottom: none; }
+
+.todo-text { flex: 1; font-size: 16px; }
+
+.completed .todo-text {
     text-decoration: line-through;
-    color: var(--muted);
+    color: #aaa;
 }
 
-.todo-empty {
-    border: 1px dashed var(--line);
-    border-radius: 12px;
-    padding: 14px;
-    color: var(--muted);
-    background: var(--surface);
-    text-align: center;
-}
-
-/* --- 8. АДАПТИВНІСТЬ (МОБІЛЬНА ВЕРСІЯ) --- */
-@media (max-width: 900px) {
-    .layout {
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .todo-app {
         grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-}
-
-@media (max-width: 520px) {
-    .hero {
-        padding-top: 40px;
-    }
-
-    .panel {
-        padding: 18px;
-    }
-
-    .row {
-        grid-template-columns: 1fr;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .todo-item {
-        grid-template-columns: auto 1fr;
-    }
-
-    .todo-item .btn {
-        grid-column: 1 / -1;
     }
 }
