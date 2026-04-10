@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-технології | Мої проєкти</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #eaf1fb;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 46px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Стиль карток проєктів */
+        .project-card {
+            display: block;
+            background-color: var(--surface);
+            padding: 30px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 26px;
+            margin: 0 0 10px 0;
+        }
+
+        .project-desc {
+            margin: 0;
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Мої проєкти</h1>
+
+    <div class="projects-grid">
+        <a href="lab 1-4/index.html" class="project-card">
+            <h2 class="project-title">Лабораторні роботи 1-4</h2>
+            <p class="project-desc">Основи HTML та CSS, адаптивна верстка та дизайн статичних сторінок.</p>
+        </a>
+
+        <a href="lab56-bookfinder/index.html" class="project-card">
+            <h2 class="project-title">Book Finder (Лабораторні 5-6)</h2>
+            <p class="project-desc">Інтерактивний додаток для пошуку книг. Робота з JavaScript, DOM та зовнішніми API.
+            </p>
+        </a>
+
+        <a href="lab7-todolist/index.html" class="project-card">
+            <h2 class="project-title">Todo List (Лабораторна 7)</h2>
+            <p class="project-desc">Сучасний список завдань, написаний на TypeScript із використанням реактивної
+                бібліотеки RxJS.</p>
+        </a>
+    </div>
+
+</body>
+</html>

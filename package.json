@@ -1,9 +1,15 @@
 {
-  "dependencies": {
-    "rxjs": "^7.8.2",
+  "name": "asia-web",
+  "scripts": {
+    "build:lab5-6(bookfinder)": "tsc -p lab5-6(bookfinder)/tsconfig.json",
+    "check:lab5-6(bookfinder)": "tsc -p lab5-6(bookfinder)/tsconfig.json --noEmit",
+    "build:lab7-todolist": "tsc -p lab7-todolist/tsconfig.json",
+    "check:lab7-todolist": "tsc -p lab7-todolist/tsconfig.json --noEmit"
+  },
+  "devDependencies": {
     "typescript": "^5.4.5"
   },
-  "scripts": {
-    "build:lab7-todolist": "npx tsc -p ./lab7-todolist/tsconfig.json"
+  "dependencies": {
+    "rxjs": "^7.8.2"
   }
 }
