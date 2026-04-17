@@ -24,98 +24,98 @@ function bindAddTodo() {
         return;
     fromEvent(todoForm, "submit")
         .pipe(map((event) => {
-        event.preventDefault();
-        return todoInput.value.trim();
-    }), map((text) => {
-        if (text.length === 0) {
-            return null;
-        }
-        const todo = {
-            id: makeTodoId(),
-            text,
-            completed: false,
-            createdAt: Date.now()
-        };
-        return todo;
-    }))
+            event.preventDefault();
+            return todoInput.value.trim();
+        }), map((text) => {
+            if (text.length === 0) {
+                return null;
+            }
+            const todo = {
+                id: makeTodoId(),
+                text,
+                completed: false,
+                createdAt: Date.now()
+            };
+            return todo;
+        }))
         .subscribe((todo) => {
-        if (!todo || !todoInput)
-            return;
-        const current = todos$.getValue();
-        todos$.next([todo, ...current]);
-        todoInput.value = "";
-    });
+            if (!todo || !todoInput)
+                return;
+            const current = todos$.getValue();
+            todos$.next([todo, ...current]);
+            todoInput.value = "";
+        });
 }
 function bindFilters() {
     if (!filterButtons)
         return;
     fromEvent(filterButtons, "click")
         .pipe(map((event) => {
-        const target = event.target;
-        const button = target?.closest("button[data-filter]");
-        return button?.dataset.filter;
-    }), map((value) => (value === "all" || value === "active" || value === "completed" ? value : null)))
+            const target = event.target;
+            const button = target?.closest("button[data-filter]");
+            return button?.dataset.filter;
+        }), map((value) => (value === "all" || value === "active" || value === "completed" ? value : null)))
         .subscribe((filter) => {
-        if (!filter || !filterButtons)
-            return;
-        filter$.next(filter);
-        updateActiveFilterButton(filter);
-    });
+            if (!filter || !filterButtons)
+                return;
+            filter$.next(filter);
+            updateActiveFilterButton(filter);
+        });
 }
 function bindListActions() {
     if (!todoList)
         return;
     fromEvent(todoList, "click")
         .pipe(map((event) => {
-        const target = event.target;
-        const button = target?.closest("button[data-action][data-id]");
-        if (!button)
-            return null;
-        return {
-            action: button.dataset.action,
-            id: button.dataset.id
-        };
-    }))
+            const target = event.target;
+            const button = target?.closest("button[data-action][data-id]");
+            if (!button)
+                return null;
+            return {
+                action: button.dataset.action,
+                id: button.dataset.id
+            };
+        }))
         .subscribe((payload) => {
-        if (!payload || !payload.id)
-            return;
-        const current = todos$.getValue();
-        if (payload.action === "edit") {
-            const targetTodo = current.find((todo) => todo.id === payload.id);
-            if (!targetTodo)
+            if (!payload || !payload.id)
                 return;
-            const updatedText = window.prompt("Редагувати задачу:", targetTodo.text);
-            if (updatedText === null)
-                return;
-            const trimmedText = updatedText.trim();
-            if (!trimmedText)
-                return;
-            const next = current.map((todo) => todo.id === payload.id ? { ...todo, text: trimmedText } : todo);
-            todos$.next(next);
-        }
-        if (payload.action === "delete") {
-            const next = current.filter((todo) => todo.id !== payload.id);
-            todos$.next(next);
-        }
-    });
+            const current = todos$.getValue();
+            if (payload.action === "edit") {
+                const targetTodo = current.find((todo) => todo.id === payload.id);
+                if (!targetTodo)
+                    return;
+                const updatedText = window.prompt("Редагувати задачу:", targetTodo.text);
+                if (updatedText === null)
+                    return;
+                const trimmedText = updatedText.trim();
+                if (!trimmedText)
+                    return;
+                const next = current.map((todo) => todo.id === payload.id ? { ...todo, text: trimmedText } : todo);
+                todos$.next(next);
+            }
+            if (payload.action === "delete") {
+                const next = current.filter((todo) => todo.id !== payload.id);
+                todos$.next(next);
+            }
+        });
     fromEvent(todoList, "change")
         .pipe(map((event) => {
-        const target = event.target;
-        const checkbox = target?.closest('input[data-action="toggle"][data-id]');
-        if (!checkbox)
-            return null;
-        return {
-            id: checkbox.dataset.id,
-            completed: checkbox.checked
-        };
-    }))
+            const target = event.target;
+            const checkbox = target?.closest('input[data-action="toggle"][data-id]');
+            if (!checkbox)
+                return null;
+            return {
+                id: checkbox.dataset.id,
+                completed: checkbox.checked
+            };
+        }))
         .subscribe((payload) => {
-        if (!payload?.id)
-            return;
-        const current = todos$.getValue();
-        const next = current.map((todo) => todo.id === payload.id ? { ...todo, completed: payload.completed } : todo);
-        todos$.next(next);
-    });
+            if (!payload?.id)
+                return;
+            const current = todos$.getValue();
+            const next = current.map((todo) => todo.id === payload.id ? { ...todo, completed: payload.completed } : todo);
+            todos$.next(next);
+        });
 }
 function bindRendering() {
     if (!todoList || !metaInfo)
@@ -150,16 +150,18 @@ function renderTodoList(items) {
     }
     todoList.innerHTML = items
         .map((todo) => {
-        const safeText = escapeHtml(todo.text);
-        return `
-        <li class="todo-item ${todo.completed ? "todo-item--done" : ""}">
-          <input class="todo-item__checkbox" type="checkbox" data-action="toggle" data-id="${todo.id}" ${todo.completed ? "checked" : ""} aria-label="Змінити стан задачі">
-          <p class="todo-item__text">${safeText}</p>
-          <button class="btn btn--ghost" type="button" data-action="edit" data-id="${todo.id}">Редагувати</button>
-          <button class="btn btn--ghost btn--danger" type="button" data-action="delete" data-id="${todo.id}">Видалити</button>
-        </li>
-      `;
-    })
+            const safeText = escapeHtml(todo.text);
+            return `
+  <li class="todo-item ${todo.completed ? "todo-item--done" : ""}">
+    <input class="todo-item__checkbox" type="checkbox" data-action="toggle" data-id="${todo.id}" ${todo.completed ? "checked" : ""} aria-label="Змінити стан задачі">
+    <p class="todo-item__text">${safeText}</p>
+    <div class="todo-item__actions">
+      <button class="btn btn--edit" type="button" data-action="edit" data-id="${todo.id}">Редагувати</button>
+      <button class="btn btn--delete" type="button" data-action="delete" data-id="${todo.id}">Видалити</button>
+    </div>
+  </li>
+`;
+        })
         .join("");
 }
 function renderMeta(todos) {
@@ -225,4 +227,4 @@ function escapeHtml(value) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
-export {};
+export { };

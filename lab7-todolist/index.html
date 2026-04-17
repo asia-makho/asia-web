@@ -7,32 +7,32 @@
   <title>Reactive Todo List</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
-  <script type="module" src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/rxjs@7.8.1/dist/bundles/rxjs.umd.min.js"></script>
+  <script src="/lab7-todolist/assets/js/main.js" type="module"></script>
 </head>
 
 <body>
   <div class="container">
-    <h1>Reactive Todo List</h1>
+    <p class="work-label">ЛАБОРАТОРНА РОБОТА № 7</p>
+    <h1> Todo List</h1>
     <a href="../index.html" class="btn-back">На головну</a>
 
     <div class="todo-app">
       <div class="input-section">
         <h2>Нова задача</h2>
-        <div class="input-group">
+        <form id="todoForm" class="input-group">
           <input type="text" id="todoInput" placeholder="Наприклад: Виконати лабораторну">
-          <button id="addBtn" type="button">Додати</button>
+          <button id="addBtn" type="submit">Додати</button>
+        </form>
+
+        <div id="filterButtons" class="filters">
+          <button data-filter="all" class="active">Усі</button>
+          <button data-filter="active">Активні</button>
+          <button data-filter="completed">Виконані</button>
         </div>
 
-        <div class="filters">
-          <button id="filterAll" class="active">Усі</button>
-          <button id="filterActive">Активні</button>
-          <button id="filterCompleted">Виконані</button>
-        </div>
-
-        <div class="stats">
-          Всього: <span id="totalCount">0</span> |
-          Активні: <span id="activeCount">0</span> |
-          Виконані: <span id="completedCount">0</span>
+        <div id="metaInfo" class="stats">
+          Всього: 0 | Активні: 0 | Виконані: 0
         </div>
       </div>
 
